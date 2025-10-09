@@ -119,7 +119,7 @@ const filteredEntries = entries.filter((entry) => {
               <div className="word-of-day-content">
                 <div className="word-header">
                   <h3 className="word-phrase">{wordOfTheDay.phrase}</h3>
-                  <p className="word-translation">{wordOfTheDay.translation}</p>
+                  <p className="word-translation">{wordOfTheDay.translation.join(', ')}</p>
                 </div>
 
                 <div className="word-details">
