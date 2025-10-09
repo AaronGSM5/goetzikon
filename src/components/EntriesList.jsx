@@ -7,19 +7,19 @@ function EntriesList({ entry }) {
 
   return (
     <>
-      <div key={entry.id} className="entry-card">
+      <div key={entry.id} className="entry-card" onClick={() => setIsOpen(!isOpen)}>
 
         {!isOpen && <div className="entry-card-closed">
           <div className="entry-header">
             <h3 className="entry-phrase">{entry.phrase} {entry.numerus} {entry.genus}</h3>
             <p className="entry-translation">{entry.translation.join(", ")}</p>
           </div>
-          <button className="entry-toggle-button" onClick={() => setIsOpen(!isOpen)}><HiChevronLeft style={{ fontSize: "large" }} /></button>
+          <button className="entry-toggle-button"><HiChevronLeft style={{ fontSize: "large" }} /></button>
         </div>}
 
-        {isOpen && <div className="entry-card-open">
+        {isOpen && <div className="entry-card-open" onClick={() => setIsOpen(!isOpen)}>
           <div className="entry-header">
-            <h3 className="entry-phrase">{entry.phrase}</h3>
+            <h3 className="entry-phrase">{entry.phrase} {entry.numerus} {entry.genus}</h3>
             <p className="entry-translation">{entry.translation.join(", ")}</p>
           </div>
           <p className="entry-description">{entry.description}</p>
@@ -28,7 +28,7 @@ function EntriesList({ entry }) {
               <span className="example-label">Beispiel:</span> {entry.example}
             </p>
           </div>
-          <button className="entry-toggle-button" onClick={() => setIsOpen(!isOpen)}><HiChevronDown style={{ fontSize: "large" }} /></button>
+          <button className="entry-toggle-button"><HiChevronDown style={{ fontSize: "large" }} /></button>
         </div>}
 
       </div>
