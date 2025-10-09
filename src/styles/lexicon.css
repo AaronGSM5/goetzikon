@@ -36,6 +36,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.025em;
   color: #1a1a1a;
+  user-select: none;
 }
 
 /* Main Content */
@@ -169,12 +170,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  user-select: none;
 }
 
 .entry-phrase {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1a1a1a;
+  user-select: none;
 }
 
 .entry-toggle-button {
@@ -205,11 +208,13 @@ body {
   font-size: 0.875rem;
   font-style: italic;
   color: #737373;
+  user-select: none;
 }
 
 .entry-description {
   color: #1a1a1a;
   line-height: 1.6;
+  user-select: none;
 }
 
 .entry-example-section {
@@ -220,10 +225,12 @@ body {
 .entry-example {
   font-size: 0.875rem;
   color: #737373;
+  user-select: none;
 }
 
 .example-label {
   font-weight: 500;
+  user-select: none;
 }
 
 .no-results {
