@@ -360,7 +360,6 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Prevent hover effect on the active button */
 .page-number.active:hover {
   background-color: #007bff;
 }

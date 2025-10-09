@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
 import "../styles/lexicon.css";
 import entries from "../data/entries.json";
-import EntriesList from "../components/EntriesList";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-// This logic for word of the day remains the same
 const today = new Date();
 const daySeed = Number(String(today.getDate()) + String(today.getMonth() + 1));
+console.log(daySeed);
 const index = daySeed % entries.length;
+console.log(index);
 const wordOfTheDay = entries[index];
 
 export default function Page() {
   const [selectedLetter, setSelectedLetter] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-
-  // 1. Add state for pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const entriesPerPage = 1;
+  const entriesPerPage = 3;
 
   const filteredEntries = entries.filter((entry) => {
     const normalizedQuery = searchQuery.toLowerCase();
@@ -31,12 +29,11 @@ export default function Page() {
     return matchesSearch && matchesLetter;
   });
 
-  // 2. Add useEffect to reset page to 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
   }, [selectedLetter, searchQuery]);
 
-  // 3. Calculate pagination variables
+  // Pagination variables
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
   const currentEntries = filteredEntries.slice(
@@ -44,6 +41,37 @@ export default function Page() {
     indexOfLastEntry
   );
   const totalPages = Math.ceil(filteredEntries.length / entriesPerPage);
+
+  // 4. NEW: Calculate the pages to display in the pagination bar
+  const maxVisiblePages = 5;
+  let startPage, endPage;
+
+  if (totalPages <= maxVisiblePages) {
+    // Less than 5 total pages, so show all
+    startPage = 1;
+    endPage = totalPages;
+  } else {
+    // More than 5 total pages, so calculate the window
+    const halfWindow = Math.floor(maxVisiblePages / 2);
+    if (currentPage <= halfWindow + 1) {
+      // Near the start
+      startPage = 1;
+      endPage = maxVisiblePages;
+    } else if (currentPage >= totalPages - halfWindow) {
+      // Near the end
+      startPage = totalPages - maxVisiblePages + 1;
+      endPage = totalPages;
+    } else {
+      // In the middle
+      startPage = currentPage - halfWindow;
+      endPage = currentPage + halfWindow;
+    }
+  }
+
+  const pagesToDisplay = Array.from(
+    { length: endPage - startPage + 1 },
+    (_, i) => startPage + i
+  );
 
   return (
     <div className="lexicon-container">
@@ -57,11 +85,10 @@ export default function Page() {
       {/* Main Content */}
       <main className="main-content">
         <div className="content-grid">
-          {/* Left Section - 70% */}
+          {/* Left Section */}
           <div className="left-section">
-            {/* Alphabet Navigation and Search */}
+            {/* Controls Section... no changes here */}
             <div className="controls-section">
-              {/* Alphabet Timeline... no changes here */}
               <div className="alphabet-timeline">
                 <div className="timeline-line"></div>
                 <div className="timeline-letters">
@@ -80,8 +107,6 @@ export default function Page() {
                   ))}
                 </div>
               </div>
-
-              {/* Search Bar... no changes here */}
               <div className="search-container">
                 <svg
                   className="search-icon"
@@ -108,8 +133,20 @@ export default function Page() {
 
             {/* Entries List */}
             <div className="entries-list">
-              {filteredEntries.length > 0 ? (
-                filteredEntries.map((entry) => <EntriesList entry={entry} />)
+              {currentEntries.length > 0 ? (
+                // Assuming EntriesList is a component that takes an entry prop
+                currentEntries.map((entry) => (
+                  <div key={entry.id} className="entry-card">
+                    {/* Re-added card structure for standalone example */}
+                    <div className="entry-header">
+                      <h3 className="entry-phrase">{entry.phrase}</h3>
+                      <p className="entry-translation">
+                        {entry.translation.join(", ")}
+                      </p>
+                    </div>
+                    <p className="entry-description">{entry.description}</p>
+                  </div>
+                ))
               ) : (
                 <div className="no-results">
                   <p>Keine Einträge gefunden.</p>
@@ -117,25 +154,25 @@ export default function Page() {
               )}
             </div>
 
-            {/* 5. Add the pagination controls */}
+            {/* UPDATED: Pagination controls now map over `pagesToDisplay` */}
             {totalPages > 1 && (
               <div className="pagination">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                  (pageNumber) => (
-                    <button
-                      key={pageNumber}
-                      onClick={() => setCurrentPage(pageNumber)}
-                      className={`page-number ${currentPage === pageNumber ? "active" : ""}`}
-                    >
-                      {pageNumber}
-                    </button>
-                  )
-                )}
+                {pagesToDisplay.map((pageNumber) => (
+                  <button
+                    key={pageNumber}
+                    onClick={() => setCurrentPage(pageNumber)}
+                    className={`page-number ${
+                      currentPage === pageNumber ? "active" : ""
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                ))}
               </div>
             )}
           </div>
 
-          {/* Right Section - 30% ... no changes here */}
+          {/* Right Section... no changes here */}
           <div className="right-section">
             <div className="word-of-day-card">
               <h2 className="word-of-day-title">Spruch des Tages</h2>
