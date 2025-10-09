@@ -35,7 +35,7 @@ const filteredEntries = entries.filter((entry) => {
       {/* Header */}
       <header className="lexicon-header">
         <div className="header-content">
-          <h1 className="site-title">Goetzikon</h1>
+          <h1 className="site-title">Götzikon</h1>
         </div>
       </header>
 
@@ -114,7 +114,7 @@ const filteredEntries = entries.filter((entry) => {
           {/* Right Section - 30% */}
           <div className="right-section">
             <div className="word-of-day-card">
-              <h2 className="word-of-day-title">Wort des Tages</h2>
+              <h2 className="word-of-day-title">Spruch des Tages</h2>
 
               <div className="word-of-day-content">
                 <div className="word-header">
