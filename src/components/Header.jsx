@@ -1,4 +1,4 @@
-import icon from "../../public/webicon.png";
+import icon from "../assets/logo.png";
 
 function Header() {
   return (
