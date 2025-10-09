@@ -1,68 +1,34 @@
 import { useState } from "react"
 import "../styles/lexicon.css"
+import entries from "../data/entries.json"
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
-const mockEntries = [
-  {
-    id: 1,
-    phrase: "Götz von Berlichingen",
-    translation: "Famous German knight",
-    description: "A historical figure known for his iron prosthetic hand and colorful language.",
-    example: "Götz von Berlichingen lebte im 16. Jahrhundert.",
-  },
-  {
-    id: 2,
-    phrase: "Gemütlichkeit",
-    translation: "Coziness, comfort",
-    description: "A German concept describing a state of warmth, friendliness, and good cheer.",
-    example: "Die Gemütlichkeit in diesem Café ist unübertroffen.",
-  },
-  {
-    id: 3,
-    phrase: "Geborgenheit",
-    translation: "Security, safety",
-    description: "A feeling of being protected and safe, often in a warm and caring environment.",
-    example: "Kinder brauchen Geborgenheit in der Familie.",
-  },
-  {
-    id: 4,
-    phrase: "Götterdämmerung",
-    translation: "Twilight of the gods",
-    description: "A dramatic or catastrophic end, originally from Norse mythology.",
-    example: "Die Götterdämmerung markiert das Ende einer Ära.",
-  },
-  {
-    id: 5,
-    phrase: "Gesundheit",
-    translation: "Health, bless you",
-    description: 'Commonly said after someone sneezes, literally meaning "health".',
-    example: "Gesundheit! Hast du dich erkältet?",
-  },
-]
-
-const wordOfTheDay = {
-  phrase: "Fernweh",
-  translation: "Wanderlust",
-  description:
-    "A strong desire to travel and explore distant places. The opposite of homesickness (Heimweh), it describes the longing to be somewhere else.",
-  example: "Ihr Fernweh trieb sie dazu, die Welt zu bereisen und neue Kulturen kennenzulernen.",
-}
+const today = new Date();
+const daySeed = Number(String(today.getDate()) + String((today.getMonth() + 1)));
+const index = daySeed % entries.length;
+const wordOfTheDay = entries[index];
 
 export default function Page() {
   const [selectedLetter, setSelectedLetter] = useState(null)
   const [searchQuery, setSearchQuery] = useState("")
 
-  const filteredEntries = mockEntries.filter((entry) => {
-    const matchesSearch =
-      searchQuery === "" ||
-      entry.phrase.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      entry.translation.toLowerCase().includes(searchQuery.toLowerCase())
+const filteredEntries = entries.filter((entry) => {
+  const normalizedQuery = searchQuery.toLowerCase();
 
-    const matchesLetter = selectedLetter === null || entry.phrase.charAt(0).toUpperCase() === selectedLetter
+  // Check if the search query matches the phrase OR any of the translations
+  const matchesSearch =
+    searchQuery === "" ||
+    entry.phrase.toLowerCase().includes(normalizedQuery) ||
+    entry.translation.some((t) => t.toLowerCase().includes(normalizedQuery));
 
-    return matchesSearch && matchesLetter
-  })
+  // This part remains the same
+  const matchesLetter =
+    selectedLetter === null ||
+    entry.phrase.charAt(0).toUpperCase() === selectedLetter;
+
+  return matchesSearch && matchesLetter;
+});
 
   return (
     <div className="lexicon-container">
@@ -127,7 +93,7 @@ export default function Page() {
                   <div key={entry.id} className="entry-card">
                     <div className="entry-header">
                       <h3 className="entry-phrase">{entry.phrase}</h3>
-                      <p className="entry-translation">{entry.translation}</p>
+                      <p className="entry-translation">{entry.translation.join(', ')}</p>
                     </div>
                     <p className="entry-description">{entry.description}</p>
                     <div className="entry-example-section">

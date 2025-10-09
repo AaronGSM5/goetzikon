@@ -100,16 +100,14 @@ body {
 }
 
 .timeline-letter:hover {
-  font-size: 1.25rem;
   color: #1a1a1a;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.2);
 }
 
 .timeline-letter.active {
-  font-size: 1.5rem;
   color: #1a1a1a;
   font-weight: 700;
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(2);
 }
 
 /* Search Bar */
