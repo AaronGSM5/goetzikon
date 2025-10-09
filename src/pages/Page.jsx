@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "../styles/lexicon.css"
 import entries from "../data/entries.json"
+import EntriesList from "../components/EntriesList";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
@@ -13,22 +14,22 @@ export default function Page() {
   const [selectedLetter, setSelectedLetter] = useState(null)
   const [searchQuery, setSearchQuery] = useState("")
 
-const filteredEntries = entries.filter((entry) => {
-  const normalizedQuery = searchQuery.toLowerCase();
+  const filteredEntries = entries.filter((entry) => {
+    const normalizedQuery = searchQuery.toLowerCase();
 
-  // Check if the search query matches the phrase OR any of the translations
-  const matchesSearch =
-    searchQuery === "" ||
-    entry.phrase.toLowerCase().includes(normalizedQuery) ||
-    entry.translation.some((t) => t.toLowerCase().includes(normalizedQuery));
+    // Check if the search query matches the phrase OR any of the translations
+    const matchesSearch =
+      searchQuery === "" ||
+      entry.phrase.toLowerCase().includes(normalizedQuery) ||
+      entry.translation.some((t) => t.toLowerCase().includes(normalizedQuery));
 
-  // This part remains the same
-  const matchesLetter =
-    selectedLetter === null ||
-    entry.phrase.charAt(0).toUpperCase() === selectedLetter;
+    // This part remains the same
+    const matchesLetter =
+      selectedLetter === null ||
+      entry.phrase.charAt(0).toUpperCase() === selectedLetter;
 
-  return matchesSearch && matchesLetter;
-});
+    return matchesSearch && matchesLetter;
+  });
 
   return (
     <div className="lexicon-container">
@@ -40,7 +41,7 @@ const filteredEntries = entries.filter((entry) => {
       </header>
 
       {/* Main Content */}
-       <main className="main-content">
+      <main className="main-content">
         <div className="content-grid">
           {/* Left Section - 70% */}
           <div className="left-section">
@@ -90,18 +91,7 @@ const filteredEntries = entries.filter((entry) => {
             <div className="entries-list">
               {filteredEntries.length > 0 ? (
                 filteredEntries.map((entry) => (
-                  <div key={entry.id} className="entry-card">
-                    <div className="entry-header">
-                      <h3 className="entry-phrase">{entry.phrase}</h3>
-                      <p className="entry-translation">{entry.translation.join(', ')}</p>
-                    </div>
-                    <p className="entry-description">{entry.description}</p>
-                    <div className="entry-example-section">
-                      <p className="entry-example">
-                        <span className="example-label">Beispiel:</span> {entry.example}
-                      </p>
-                    </div>
-                  </div>
+                  <EntriesList entry={entry} />
                 ))
               ) : (
                 <div className="no-results">
@@ -109,6 +99,7 @@ const filteredEntries = entries.filter((entry) => {
                 </div>
               )}
             </div>
+
           </div>
 
           {/* Right Section - 30% */}
