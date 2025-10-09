@@ -14,7 +14,7 @@ function EntriesList({ entry }) {
             <h3 className="entry-phrase">{entry.phrase} {entry.numerus} {entry.genus}</h3>
             <p className="entry-translation">{entry.translation.join(", ")}</p>
           </div>
-          <button className="entry-toggle-button" onClick={() => setIsOpen(!isOpen)}><HiChevronLeft /></button>
+          <button className="entry-toggle-button" onClick={() => setIsOpen(!isOpen)}><HiChevronLeft style={{ fontSize: "large" }} /></button>
         </div>}
 
         {isOpen && <div className="entry-card-open">
@@ -28,7 +28,7 @@ function EntriesList({ entry }) {
               <span className="example-label">Beispiel:</span> {entry.example}
             </p>
           </div>
-          <button className="entry-toggle-button" onClick={() => setIsOpen(!isOpen)}><HiChevronDown /></button>
+          <button className="entry-toggle-button" onClick={() => setIsOpen(!isOpen)}><HiChevronDown style={{ fontSize: "large" }} /></button>
         </div>}
 
       </div>
