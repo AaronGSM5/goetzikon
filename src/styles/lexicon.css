@@ -154,6 +154,7 @@ body {
 }
 
 .entry-card {
+  position: relative;
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 0.5rem;
@@ -173,6 +174,32 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1a1a1a;
+}
+
+.entry-toggle-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c0c0c041;
+  border: none;
+  border-radius: 50%;
+}
+
+.entry-toggle-button:hover {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c0c0c09f;
+  border: none;
+  border-radius: 100%;
 }
 
 .entry-translation {
