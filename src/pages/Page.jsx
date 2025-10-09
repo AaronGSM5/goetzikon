@@ -4,6 +4,7 @@ import "../styles/header.css";
 import entries from "../data/entries.json";
 
 import Header from "../components/Header";
+import EntriesList from "../components/EntriesList";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -132,19 +133,7 @@ export default function Page() {
             {/* Entries List */}
             <div className="entries-list">
               {currentEntries.length > 0 ? (
-                // Assuming EntriesList is a component that takes an entry prop
-                currentEntries.map((entry) => (
-                  <div key={entry.id} className="entry-card">
-                    {/* Re-added card structure for standalone example */}
-                    <div className="entry-header">
-                      <h3 className="entry-phrase">{entry.phrase}</h3>
-                      <p className="entry-translation">
-                        {entry.translation.join(", ")}
-                      </p>
-                    </div>
-                    <p className="entry-description">{entry.description}</p>
-                  </div>
-                ))
+                currentEntries.map((entry) => <EntriesList entry={entry} />)
               ) : (
                 <div className="no-results">
                   <p>Keine Einträge gefunden.</p>
