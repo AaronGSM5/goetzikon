@@ -57,7 +57,7 @@ export default function Page() {
                       className={`timeline-letter ${selectedLetter === letter ? "active" : ""}`}
                       onClick={() =>
                         setSelectedLetter(
-                          selectedLetter === letter ? null : letter
+                          selectedLetter === letter ? null : letter,
                         )
                       }
                     >
@@ -144,4 +144,3 @@ export default function Page() {
     </div>
   );
 }
-
