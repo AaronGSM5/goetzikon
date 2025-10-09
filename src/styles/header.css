@@ -47,3 +47,14 @@
   transform: translateY(-1px);
 }
 
+.site-title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-icon {
+  height: 60px;
+  width: auto;
+}
+
