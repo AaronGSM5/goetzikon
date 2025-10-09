@@ -318,3 +318,47 @@ body {
     position: static;
   }
 }
+
+/*
+ * Pagination Styles
+ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* Space between buttons */
+  margin-top: 2rem; /* Space above the pagination bar */
+  padding: 1rem 0;
+}
+
+.page-number {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db; /* Light gray border */
+  color: #374151; /* Dark gray text */
+  font-weight: 500;
+  font-size: 0.9rem;
+  min-width: 40px; /* Ensures buttons have a consistent width */
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.page-number:hover {
+  background-color: #f3f4f6; /* Very light gray */
+  border-color: #9ca3af;
+}
+
+.page-number.active {
+  background-color: #007bff; /* A nice blue for the active state */
+  color: #ffffff; /* White text */
+  border-color: #007bff;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Prevent hover effect on the active button */
+.page-number.active:hover {
+  background-color: #007bff;
+}
