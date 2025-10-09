@@ -1,26 +1,22 @@
-/* --- Update Header Content --- */
-/* Use flexbox to align title and donation section */
 .header-content {
   display: flex;
-  justify-content: space-between; /* Pushes title and donation to opposite ends */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-/* --- New Donation Section Styles --- */
 .donation-section {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between the text and the button */
+  gap: 1.5rem;
   text-align: right;
 }
 
 .donation-info {
   font-size: 0.9rem;
-  color: #6b7280; /* A soft gray for the text */
+  color: #6b7280;
 }
 
-/* Style for the link inside the info text */
 .info-link {
   color: #007bff;
   text-decoration: none;
@@ -31,25 +27,23 @@
   text-decoration: underline;
 }
 
-/* --- Donation Button Styles --- */
 .donation-button {
-  /* Button Appearance */
-  background-color: #28a745; /* A friendly green color */
+  background-color: #28a745;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
-  text-decoration: none; /* Remove underline from the link */
+  text-decoration: none;
   text-align: center;
 
-  /* Smooth transition for hover effects */
   transition:
     background-color 0.2s ease-in-out,
     transform 0.1s ease;
 }
 
 .donation-button:hover {
-  background-color: #218838; /* A darker green on hover */
-  transform: translateY(-1px); /* Slight lift effect */
+  background-color: #218838;
+  transform: translateY(-1px);
 }
+
