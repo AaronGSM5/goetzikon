@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"; // Import useEffect
+import { useState, useEffect } from "react";
 import "../styles/lexicon.css";
 import entries from "../data/entries.json";
+import EntriesList from "../components/EntriesList";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -107,25 +108,8 @@ export default function Page() {
 
             {/* Entries List */}
             <div className="entries-list">
-              {currentEntries.length > 0 ? (
-                // 4. Update the list to map over paginated entries
-                currentEntries.map((entry) => (
-                  <div key={entry.id} className="entry-card">
-                    <div className="entry-header">
-                      <h3 className="entry-phrase">{entry.phrase}</h3>
-                      <p className="entry-translation">
-                        {entry.translation.join(", ")}
-                      </p>
-                    </div>
-                    <p className="entry-description">{entry.description}</p>
-                    <div className="entry-example-section">
-                      <p className="entry-example">
-                        <span className="example-label">Beispiel:</span>{" "}
-                        {entry.example}
-                      </p>
-                    </div>
-                  </div>
-                ))
+              {filteredEntries.length > 0 ? (
+                filteredEntries.map((entry) => <EntriesList entry={entry} />)
               ) : (
                 <div className="no-results">
                   <p>Keine Einträge gefunden.</p>
