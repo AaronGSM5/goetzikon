@@ -106,6 +106,7 @@ export default function Page() {
                   ))}
                 </div>
               </div>
+            </div>
               <div className="search-container">
                 <svg
                   className="search-icon"
@@ -128,7 +129,6 @@ export default function Page() {
                   className="search-input"
                 />
               </div>
-            </div>
 
             {/* Entries List */}
             <div className="entries-list">
