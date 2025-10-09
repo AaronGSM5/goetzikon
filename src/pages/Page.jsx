@@ -1,5 +1,5 @@
 import { useState } from "react"
-import "./lexicon.css"
+import "../styles/lexicon.css"
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
