@@ -1,6 +1,6 @@
-import { useState } from "react"
-import "../styles/lexicon.css"
-import entries from "../data/entries.json"
+import { useState } from "react";
+import "../styles/lexicon.css";
+import entries from "../data/entries.json";
 import EntriesList from "../components/EntriesList";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -16,14 +16,7 @@ export default function Page() {
 
   const filteredEntries = entries.filter((entry) => {
     const normalizedQuery = searchQuery.toLowerCase();
-  const filteredEntries = entries.filter((entry) => {
-    const normalizedQuery = searchQuery.toLowerCase();
 
-    // Check if the search query matches the phrase OR any of the translations
-    const matchesSearch =
-      searchQuery === "" ||
-      entry.phrase.toLowerCase().includes(normalizedQuery) ||
-      entry.translation.some((t) => t.toLowerCase().includes(normalizedQuery));
     // Check if the search query matches the phrase OR any of the translations
     const matchesSearch =
       searchQuery === "" ||
@@ -34,13 +27,7 @@ export default function Page() {
     const matchesLetter =
       selectedLetter === null ||
       entry.phrase.charAt(0).toUpperCase() === selectedLetter;
-    // This part remains the same
-    const matchesLetter =
-      selectedLetter === null ||
-      entry.phrase.charAt(0).toUpperCase() === selectedLetter;
 
-    return matchesSearch && matchesLetter;
-  });
     return matchesSearch && matchesLetter;
   });
 
@@ -54,7 +41,6 @@ export default function Page() {
       </header>
 
       {/* Main Content */}
-      <main className="main-content">
       <main className="main-content">
         <div className="content-grid">
           {/* Left Section - 70% */}
@@ -108,16 +94,13 @@ export default function Page() {
             {/* Entries List */}
             <div className="entries-list">
               {filteredEntries.length > 0 ? (
-                filteredEntries.map((entry) => (
-                  <EntriesList entry={entry} />
-                ))
+                filteredEntries.map((entry) => <EntriesList entry={entry} />)
               ) : (
                 <div className="no-results">
                   <p>Keine Einträge gefunden.</p>
                 </div>
               )}
             </div>
-
           </div>
 
           {/* Right Section - 30% */}
