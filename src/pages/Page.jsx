@@ -16,7 +16,7 @@ export default function Page() {
 
   // 1. Add state for pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const entriesPerPage = 5; // You can change this number
+  const entriesPerPage = 1;
 
   const filteredEntries = entries.filter((entry) => {
     const normalizedQuery = searchQuery.toLowerCase();
@@ -35,13 +35,14 @@ export default function Page() {
     setCurrentPage(1);
   }, [selectedLetter, searchQuery]);
 
-
   // 3. Calculate pagination variables
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
-  const currentEntries = filteredEntries.slice(indexOfFirstEntry, indexOfLastEntry);
+  const currentEntries = filteredEntries.slice(
+    indexOfFirstEntry,
+    indexOfLastEntry
+  );
   const totalPages = Math.ceil(filteredEntries.length / entriesPerPage);
-
 
   return (
     <div className="lexicon-container">
@@ -59,7 +60,7 @@ export default function Page() {
           <div className="left-section">
             {/* Alphabet Navigation and Search */}
             <div className="controls-section">
-               {/* Alphabet Timeline... no changes here */}
+              {/* Alphabet Timeline... no changes here */}
               <div className="alphabet-timeline">
                 <div className="timeline-line"></div>
                 <div className="timeline-letters">
@@ -67,7 +68,11 @@ export default function Page() {
                     <span
                       key={letter}
                       className={`timeline-letter ${selectedLetter === letter ? "active" : ""}`}
-                      onClick={() => setSelectedLetter(selectedLetter === letter ? null : letter)}
+                      onClick={() =>
+                        setSelectedLetter(
+                          selectedLetter === letter ? null : letter
+                        )
+                      }
                     >
                       {letter}
                     </span>
@@ -75,10 +80,28 @@ export default function Page() {
                 </div>
               </div>
 
-               {/* Search Bar... no changes here */}
+              {/* Search Bar... no changes here */}
               <div className="search-container">
-                <svg className="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" > <circle cx="11" cy="11" r="8"></circle> <path d="m21 21-4.35-4.35"></path> </svg>
-                <input type="text" placeholder="Suche nach Begriffen..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="search-input" />
+                <svg
+                  className="search-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  {" "}
+                  <circle cx="11" cy="11" r="8"></circle>{" "}
+                  <path d="m21 21-4.35-4.35"></path>{" "}
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Suche nach Begriffen..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-input"
+                />
               </div>
             </div>
 
@@ -90,12 +113,15 @@ export default function Page() {
                   <div key={entry.id} className="entry-card">
                     <div className="entry-header">
                       <h3 className="entry-phrase">{entry.phrase}</h3>
-                      <p className="entry-translation">{entry.translation.join(', ')}</p>
+                      <p className="entry-translation">
+                        {entry.translation.join(", ")}
+                      </p>
                     </div>
                     <p className="entry-description">{entry.description}</p>
                     <div className="entry-example-section">
                       <p className="entry-example">
-                        <span className="example-label">Beispiel:</span> {entry.example}
+                        <span className="example-label">Beispiel:</span>{" "}
+                        {entry.example}
                       </p>
                     </div>
                   </div>
@@ -106,22 +132,23 @@ export default function Page() {
                 </div>
               )}
             </div>
-            
+
             {/* 5. Add the pagination controls */}
             {totalPages > 1 && (
               <div className="pagination">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
-                  <button
-                    key={pageNumber}
-                    onClick={() => setCurrentPage(pageNumber)}
-                    className={`page-number ${currentPage === pageNumber ? "active" : ""}`}
-                  >
-                    {pageNumber}
-                  </button>
-                ))}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (pageNumber) => (
+                    <button
+                      key={pageNumber}
+                      onClick={() => setCurrentPage(pageNumber)}
+                      className={`page-number ${currentPage === pageNumber ? "active" : ""}`}
+                    >
+                      {pageNumber}
+                    </button>
+                  )
+                )}
               </div>
             )}
-
           </div>
 
           {/* Right Section - 30% ... no changes here */}
@@ -131,7 +158,9 @@ export default function Page() {
               <div className="word-of-day-content">
                 <div className="word-header">
                   <h3 className="word-phrase">{wordOfTheDay.phrase}</h3>
-                  <p className="word-translation">{wordOfTheDay.translation.join(', ')}</p>
+                  <p className="word-translation">
+                    {wordOfTheDay.translation.join(", ")}
+                  </p>
                 </div>
                 <div className="word-details">
                   <div className="word-section">
@@ -140,7 +169,9 @@ export default function Page() {
                   </div>
                   <div className="word-section">
                     <h4 className="section-title">Beispiel</h4>
-                    <p className="section-text example-text">{wordOfTheDay.example}</p>
+                    <p className="section-text example-text">
+                      {wordOfTheDay.example}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -158,3 +189,4 @@ export default function Page() {
     </div>
   );
 }
+

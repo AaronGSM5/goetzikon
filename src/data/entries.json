@@ -2,7 +2,10 @@
   {
     "id": 1,
     "phrase": "Bauer gesagt",
-    "translation": ["Genauer gesagt", "Vereinfacht erklärt"],
+    "translation": [
+      "Genauer gesagt",
+      "Vereinfacht erklärt"
+    ],
     "description": "Unser aller Vater Herr Götz verwendet die Phrase 'Bauer gesagt', wenn er einen spezifischen Sachverhalt genauer beschreiben möchte. Häufig folgen auf diesen Ausdruck hochgötzische Wörter.",
     "example": "Ich habe mir soeben noch Sumpfkraut abgeheftet. Bauer gesagt in der Eurius Ambus und ganz.",
     "numerus": null,
@@ -11,7 +14,9 @@
   {
     "id": 2,
     "phrase": "Der Zapfen",
-    "translation": ["der Gesprächspartner"],
+    "translation": [
+      "der Gesprächspartner"
+    ],
     "description": "Herr Götz verwendet diese Anrede um den Gegenüber anzusprechen. Dabei zeugt dieser Ausdruck von großer Werschätzung und lässt auf ein vertrautes Verhältniss schließen",
     "example": "Ohne den Zapfen zu schicken.",
     "numerus": "Sg.",
@@ -20,7 +25,9 @@
   {
     "id": 3,
     "phrase": "Oh, ich danke",
-    "translation": ["Vielen Dank"],
+    "translation": [
+      "Vielen Dank"
+    ],
     "description": "Herr Götz benutzt diesen Spruch um sich für eine Dienstleistung oder ein Produkt zu bedanken. Häufig findet man den Spruch im Zusammenhang mit der Nahrungsübergabe.",
     "example": "Ich habe Ihnen heute einen Kaffee geholt. Oh, ich danke.",
     "numerus": null,
@@ -29,7 +36,10 @@
   {
     "id": 4,
     "phrase": "Froh eintauchen",
-    "translation": ["Duschen gehen", "sich Baden"],
+    "translation": [
+      "Duschen gehen",
+      "sich Baden"
+    ],
     "description": "",
     "example": "",
     "numerus": null,
@@ -38,7 +48,9 @@
   {
     "id": 5,
     "phrase": "Mit Kraft",
-    "translation": ["genauer"],
+    "translation": [
+      "genauer"
+    ],
     "description": "",
     "example": "Da muss man später nochmal mit Kraft nachschauen",
     "numerus": null,
@@ -47,79 +59,97 @@
   {
     "id": 6,
     "phrase": "Eingeölter Strand",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "Sg.",
     "genus": null
   },
-    {
+  {
     "id": 7,
     "phrase": "Den Meister als Andockstation nutzen",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-    {
+  {
     "id": 8,
     "phrase": "Grund zum ausatmen",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-    {
+  {
     "id": 9,
     "phrase": "Da bleib ich bei der Werkstattadresse",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-    {
+  {
     "id": 10,
     "phrase": "Den Jugendlichen Siezen",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-      {
+  {
     "id": 11,
     "phrase": "Die Töne Ordnen",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-      {
+  {
     "id": 12,
     "phrase": "Von innen arbeiten",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-      {
+  {
     "id": 13,
     "phrase": "Den Spruch wegtun",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
     "genus": ""
   },
-      {
+  {
     "id": 14,
     "phrase": "",
-    "translation": [""],
+    "translation": [
+      ""
+    ],
     "description": "",
     "example": "",
     "numerus": "",
