@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import "../styles/lexicon.css";
+import "../styles/header.css";
 import entries from "../data/entries.json";
+
+import Header from "../components/Header";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -76,12 +79,7 @@ export default function Page() {
   return (
     <div className="lexicon-container">
       {/* Header */}
-      <header className="lexicon-header">
-        <div className="header-content">
-          <h1 className="site-title">Götzikon</h1>
-        </div>
-      </header>
-
+      <Header />
       {/* Main Content */}
       <main className="main-content">
         <div className="content-grid">
