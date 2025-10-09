@@ -1,34 +1,34 @@
-import { useState } from "react"
-import "../styles/lexicon.css"
-import entries from "../data/entries.json"
+import { useState } from "react";
+import "../styles/lexicon.css";
+import entries from "../data/entries.json";
 
-const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const today = new Date();
-const daySeed = Number(String(today.getDate()) + String((today.getMonth() + 1)));
+const daySeed = Number(String(today.getDate()) + String(today.getMonth() + 1));
 const index = daySeed % entries.length;
 const wordOfTheDay = entries[index];
 
 export default function Page() {
-  const [selectedLetter, setSelectedLetter] = useState(null)
-  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedLetter, setSelectedLetter] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-const filteredEntries = entries.filter((entry) => {
-  const normalizedQuery = searchQuery.toLowerCase();
+  const filteredEntries = entries.filter((entry) => {
+    const normalizedQuery = searchQuery.toLowerCase();
 
-  // Check if the search query matches the phrase OR any of the translations
-  const matchesSearch =
-    searchQuery === "" ||
-    entry.phrase.toLowerCase().includes(normalizedQuery) ||
-    entry.translation.some((t) => t.toLowerCase().includes(normalizedQuery));
+    // Check if the search query matches the phrase OR any of the translations
+    const matchesSearch =
+      searchQuery === "" ||
+      entry.phrase.toLowerCase().includes(normalizedQuery) ||
+      entry.translation.some((t) => t.toLowerCase().includes(normalizedQuery));
 
-  // This part remains the same
-  const matchesLetter =
-    selectedLetter === null ||
-    entry.phrase.charAt(0).toUpperCase() === selectedLetter;
+    // This part remains the same
+    const matchesLetter =
+      selectedLetter === null ||
+      entry.phrase.charAt(0).toUpperCase() === selectedLetter;
 
-  return matchesSearch && matchesLetter;
-});
+    return matchesSearch && matchesLetter;
+  });
 
   return (
     <div className="lexicon-container">
@@ -40,7 +40,7 @@ const filteredEntries = entries.filter((entry) => {
       </header>
 
       {/* Main Content */}
-       <main className="main-content">
+      <main className="main-content">
         <div className="content-grid">
           {/* Left Section - 70% */}
           <div className="left-section">
@@ -54,7 +54,11 @@ const filteredEntries = entries.filter((entry) => {
                     <span
                       key={letter}
                       className={`timeline-letter ${selectedLetter === letter ? "active" : ""}`}
-                      onClick={() => setSelectedLetter(selectedLetter === letter ? null : letter)}
+                      onClick={() =>
+                        setSelectedLetter(
+                          selectedLetter === letter ? null : letter
+                        )
+                      }
                     >
                       {letter}
                     </span>
@@ -93,12 +97,15 @@ const filteredEntries = entries.filter((entry) => {
                   <div key={entry.id} className="entry-card">
                     <div className="entry-header">
                       <h3 className="entry-phrase">{entry.phrase}</h3>
-                      <p className="entry-translation">{entry.translation.join(', ')}</p>
+                      <p className="entry-translation">
+                        {entry.translation.join(", ")}
+                      </p>
                     </div>
                     <p className="entry-description">{entry.description}</p>
                     <div className="entry-example-section">
                       <p className="entry-example">
-                        <span className="example-label">Beispiel:</span> {entry.example}
+                        <span className="example-label">Beispiel:</span>{" "}
+                        {entry.example}
                       </p>
                     </div>
                   </div>
@@ -119,7 +126,9 @@ const filteredEntries = entries.filter((entry) => {
               <div className="word-of-day-content">
                 <div className="word-header">
                   <h3 className="word-phrase">{wordOfTheDay.phrase}</h3>
-                  <p className="word-translation">{wordOfTheDay.translation.join(', ')}</p>
+                  <p className="word-translation">
+                    {wordOfTheDay.translation.join(", ")}
+                  </p>
                 </div>
 
                 <div className="word-details">
@@ -130,7 +139,9 @@ const filteredEntries = entries.filter((entry) => {
 
                   <div className="word-section">
                     <h4 className="section-title">Beispiel</h4>
-                    <p className="section-text example-text">{wordOfTheDay.example}</p>
+                    <p className="section-text example-text">
+                      {wordOfTheDay.example}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -146,5 +157,6 @@ const filteredEntries = entries.filter((entry) => {
         </div>
       </footer>
     </div>
-  )
+  );
 }
+
