@@ -242,7 +242,6 @@ body {
   color: #737373;
 }
 
-/* Right Section - 30% */
 .right-section {
   flex: 0 0 30%;
 }
@@ -319,7 +318,6 @@ body {
   color: #737373;
 }
 
-/* Footer */
 .lexicon-footer {
   background-color: #ffffff;
   border-top: 1px solid #e5e5e5;
@@ -352,6 +350,10 @@ body {
   .word-of-day-card {
     position: static;
   }
+
+  .alphabet-timeline {
+    display: none;
+  }
 }
 
 /*
@@ -361,8 +363,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem; /* Space between buttons */
-  margin-top: 2rem; /* Space above the pagination bar */
+  gap: 0.5rem;
+  margin-top: 2rem;
   padding: 1rem 0;
 }
 

@@ -4,16 +4,11 @@ import "../styles/header.css";
 import entries from "../data/entries.json";
 
 import Header from "../components/Header";
-import EntriesList from "../components/EntriesList";
+import Entry from "../components/Entry";
+import AlphabetSelect from "../components/AlphabetSelect";
+import WordOfTheDay from "../components/WordOfTheDay";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-
-const today = new Date();
-const daySeed = Number(String(today.getDate()) + String(today.getMonth() + 1));
-console.log(daySeed);
-const index = daySeed % entries.length;
-console.log(index);
-const wordOfTheDay = entries[index];
 
 export default function Page() {
   const [selectedLetter, setSelectedLetter] = useState(null);
@@ -86,54 +81,40 @@ export default function Page() {
         <div className="content-grid">
           {/* Left Section */}
           <div className="left-section">
-            {/* Controls Section... no changes here */}
             <div className="controls-section">
-              <div className="alphabet-timeline">
-                <div className="timeline-line"></div>
-                <div className="timeline-letters">
-                  {alphabet.map((letter) => (
-                    <span
-                      key={letter}
-                      className={`timeline-letter ${selectedLetter === letter ? "active" : ""}`}
-                      onClick={() =>
-                        setSelectedLetter(
-                          selectedLetter === letter ? null : letter
-                        )
-                      }
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <AlphabetSelect
+                alphabet={alphabet}
+                selectedLetter={selectedLetter}
+                setSelectedLetter={setSelectedLetter}
+              />
             </div>
-              <div className="search-container">
-                <svg
-                  className="search-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  {" "}
-                  <circle cx="11" cy="11" r="8"></circle>{" "}
-                  <path d="m21 21-4.35-4.35"></path>{" "}
-                </svg>
-                <input
-                  type="text"
-                  placeholder="Suche nach Begriffen..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="search-input"
-                />
-              </div>
+            <div className="search-container">
+              <svg
+                className="search-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                {" "}
+                <circle cx="11" cy="11" r="8"></circle>{" "}
+                <path d="m21 21-4.35-4.35"></path>{" "}
+              </svg>
+              <input
+                type="text"
+                placeholder="Suche nach Begriffen..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="search-input"
+              />
+            </div>
 
             {/* Entries List */}
             <div className="entries-list">
               {currentEntries.length > 0 ? (
-                currentEntries.map((entry) => <EntriesList entry={entry} />)
+                currentEntries.map((entry) => <Entry entry={entry} />)
               ) : (
                 <div className="no-results">
                   <p>Keine Einträge gefunden.</p>
@@ -141,7 +122,6 @@ export default function Page() {
               )}
             </div>
 
-            {/* UPDATED: Pagination controls now map over `pagesToDisplay` */}
             {totalPages > 1 && (
               <div className="pagination">
                 {pagesToDisplay.map((pageNumber) => (
@@ -159,31 +139,8 @@ export default function Page() {
             )}
           </div>
 
-          {/* Right Section... no changes here */}
           <div className="right-section">
-            <div className="word-of-day-card">
-              <h2 className="word-of-day-title">Spruch des Tages</h2>
-              <div className="word-of-day-content">
-                <div className="word-header">
-                  <h3 className="word-phrase">{wordOfTheDay.phrase}</h3>
-                  <p className="word-translation">
-                    {wordOfTheDay.translation.join(", ")}
-                  </p>
-                </div>
-                <div className="word-details">
-                  <div className="word-section">
-                    <h4 className="section-title">Beschreibung</h4>
-                    <p className="section-text">{wordOfTheDay.description}</p>
-                  </div>
-                  <div className="word-section">
-                    <h4 className="section-title">Beispiel</h4>
-                    <p className="section-text example-text">
-                      {wordOfTheDay.example}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <WordOfTheDay />
           </div>
         </div>
       </main>
