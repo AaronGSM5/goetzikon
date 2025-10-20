@@ -1,5 +1,5 @@
 /* Desktops */
-@media (max-width: 1440px) {
+@media (min-width: 1025px) {
 
   /* Der Haupt-Button-Container */
   .donation-button {
@@ -11,6 +11,7 @@
     /* Passen Sie die Größe an Ihre Bedürfnisse an */
     height: 55px;
     border-radius: 8px;
+    padding: 0px;
   }
 
   /* Der Wrapper, der die eigentliche Drehung ausführt */
