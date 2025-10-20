@@ -108,7 +108,7 @@ body {
 }
 
 .timeline-letter.active {
-  color: var(--custom-text-color);
+  color: var(--custom-primary-color);
   font-weight: 700;
   transform: translateY(-4px) scale(1.5);
 }
