@@ -1,6 +1,19 @@
+import { useEffect, useState } from "react";
 import icon from "../assets/logo.png";
+import { HiGift } from "react-icons/hi";
 
 function Header() {
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, [])
+
   return (
     <>
       <header className="lexicon-header">
@@ -30,7 +43,16 @@ function Header() {
               rel="noopener noreferrer"
               className="donation-button"
             >
-              Hilfe für Obdachlose
+              {windowWidth >= 1024 ? <div className="flip-content-wrapper">
+                <div className="button-text">
+                  <span>Hilfe für Obdachlose</span>
+                </div>
+                <div className="button-svg">
+                  <HiGift id="giftIcon" />
+                </div>
+              </div> : <div className="button-svg-vis">
+                <HiGift id="giftIconVis" />
+              </div>}
             </a>
           </div>
         </div>

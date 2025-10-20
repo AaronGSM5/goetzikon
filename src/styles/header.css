@@ -32,19 +32,31 @@
   color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
 
   transition:
     background-color 0.2s ease-in-out,
-    transform 0.1s ease;
 }
 
 .donation-button:hover {
   background-color: #218838;
-  transform: translateY(-1px);
+}
+
+.button-svg-vis {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#giftIconVis {
+  font-size: larger;
 }
 
 .site-title-container {

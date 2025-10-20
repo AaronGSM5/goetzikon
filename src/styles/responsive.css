@@ -1,5 +1,69 @@
 /* Desktops */
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+
+  /* Der Haupt-Button-Container */
+  .donation-button {
+    /* Stellt sicher, dass der 3D-Effekt sichtbar ist */
+    perspective: 1000px;
+    /* Stellt sicher, dass die Wrapper-Größe passt */
+    position: relative;
+    width: 180px;
+    /* Passen Sie die Größe an Ihre Bedürfnisse an */
+    height: 55px;
+    border-radius: 8px;
+  }
+
+  /* Der Wrapper, der die eigentliche Drehung ausführt */
+  .flip-content-wrapper {
+    position: relative;
+    width: 180px;
+    height: 55px;
+    text-align: center;
+    /* Dauer und Art des Übergangs für die Drehung */
+    transition: transform 0.3s;
+    /* Stellt sicher, dass Kindelemente ihre 3D-Eigenschaften beibehalten */
+    transform-style: preserve-3d;
+  }
+
+  /* Der Container für den Text (Vorderseite) */
+  .button-text,
+  .button-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Verhindert, dass die Rückseite des Elements beim Drehen sichtbar ist */
+    backface-visibility: hidden;
+    /* Beispiel-Hintergrundfarbe */
+    color: white;
+  }
+
+  /* Der Container für das SVG (Rückseite) */
+  .button-svg {
+    /* Dreht das SVG standardmäßig um 180 Grad, sodass es nicht sichtbar ist */
+    transform: rotateX(180deg);
+    /* Beispiel-Hintergrundfarbe */
+    background-color: #218838;
+    border-radius: 10px;
+  }
+
+  /* Flip-Effekt beim Hovern */
+  .donation-button:hover .flip-content-wrapper {
+    width: 180px;
+    height: 55px;
+    /* Dreht den Wrapper, sodass die Rückseite sichtbar wird */
+    transform: rotateX(180deg);
+  }
+
+  #giftIcon {
+    font-size: large;
+  }
+}
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -7,12 +71,12 @@
     flex-direction: column;
   }
 
-  .left-section,
-  .right-section {
+  .left-section {
     flex: 1 1 100%;
   }
 
   .right-section {
+    flex: 1 1 100%;
     order: -1;
   }
 
@@ -22,6 +86,10 @@
 
   .alphabet-timeline {
     display: none;
+  }
+
+  #giftIcon {
+    font-size: medium;
   }
 }
 
@@ -41,10 +109,13 @@
     font-size: 13px;
   }
 
+  #giftIcon {
+    font-size: medium;
+  }
+
   .donation-button {
-    width: 120px;
-    font-size: 12px;
-    padding: 0.3rem 0.6rem;
+    width: 50px;
+    height: 50px;
   }
 
 }
