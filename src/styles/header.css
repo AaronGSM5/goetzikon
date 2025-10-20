@@ -14,11 +14,10 @@
 
 .donation-info {
   font-size: 0.9rem;
-  color: #6b7280;
 }
 
 .info-link {
-  color: #007bff;
+  color: var(--custom-primary-color);
   text-decoration: none;
   font-weight: 500;
 }
@@ -28,8 +27,8 @@
 }
 
 .donation-button {
-  background-color: #28a745;
-  color: #ffffff;
+  color: var(--custom-text-color);
+  background-color: var(--custom-primary-color);
   font-weight: 600;
   font-size: 0.9rem;
   display: flex;
@@ -44,9 +43,7 @@
     background-color 0.2s ease-in-out,
 }
 
-.donation-button:hover {
-  background-color: #218838;
-}
+.donation-button:hover {}
 
 .button-svg-vis {
   width: 100px;
