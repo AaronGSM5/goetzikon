@@ -1,10 +1,10 @@
 body {
   --custom-text-color: #000333;
   --custom-background-color: #ffffff;
+  --custom-border-color: #D5DDE1;
   --custom-primary-color: #3fa5e9;
   --custom-secundary-color: #60cbe6;
   --custom-accent-color: #c7f5ff;
-  background-color: var(--custom-background-color);
 }
 
 .primary {
@@ -18,9 +18,3 @@ body {
 .accent {
   background-color: var(--custom-accent-color);
 }
-
-/* --text: #000333;
---background: #cde2ee;
---primary: #3fa5e9;
---secondary: #60cbe6;
---accent: #c7f5ff; */

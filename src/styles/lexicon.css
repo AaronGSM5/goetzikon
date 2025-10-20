@@ -131,7 +131,7 @@ body {
   width: 100%;
   padding: 0.625rem 0.75rem 0.625rem 2.5rem;
   font-size: 0.875rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--custom-border-color);
   border-radius: 0.375rem;
   background-color: var(--custom-background-color);
   color: var(--custom-text-color);
@@ -157,7 +157,7 @@ body {
 .entry-card {
   position: relative;
   background-color: var(--custom-background-color);
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--custom-border-color);
   border-radius: 0.5rem;
   padding: 1.5rem;
   display: flex;
@@ -219,7 +219,7 @@ body {
 
 .entry-example-section {
   padding-top: 0.5rem;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--custom-border-color);
 }
 
 .entry-example {
@@ -235,7 +235,7 @@ body {
 
 .no-results {
   background-color: var(--custom-background-color);
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--custom-border-color);
   border-radius: 0.5rem;
   padding: 3rem;
   text-align: center;
@@ -248,7 +248,7 @@ body {
 
 .word-of-day-card {
   background-color: var(--custom-background-color);
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--custom-border-color);
   border-radius: 0.5rem;
   padding: 1.5rem;
   display: flex;
@@ -263,7 +263,7 @@ body {
   font-weight: 700;
   color: var(--custom-text-color);
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--custom-border-color);
 }
 
 .word-of-day-content {
@@ -320,7 +320,7 @@ body {
 
 .lexicon-footer {
   background-color: var(--custom-background-color);
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--custom-border-color);
   margin-top: auto;
 }
 
@@ -350,7 +350,7 @@ body {
 
 .page-number {
   background-color: var(--custom-background-color);
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--custom-border-color);
   color: var(--custom-text-color);
   font-weight: 500;
   font-size: 0.9rem;
@@ -364,7 +364,7 @@ body {
 
 .page-number:hover {
   background-color: var(--custom-background-color);
-  border-color: #9ca3af;
+  border-color: #b3b7b9;
 }
 
 .page-number.active {
