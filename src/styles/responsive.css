@@ -1,0 +1,50 @@
+/* Desktops */
+@media (max-width: 1440px) {}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .content-grid {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    flex: 1 1 100%;
+  }
+
+  .right-section {
+    order: -1;
+  }
+
+  .word-of-day-card {
+    position: static;
+  }
+
+  .alphabet-timeline {
+    display: none;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .site-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .site-title {
+    font-size: 30px;
+  }
+
+  .donation-info {
+    width: 130px;
+    font-size: 13px;
+  }
+
+  .donation-button {
+    width: 120px;
+    font-size: 12px;
+    padding: 0.3rem 0.6rem;
+  }
+
+}

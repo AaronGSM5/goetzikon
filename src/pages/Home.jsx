@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/lexicon.css";
 import "../styles/header.css";
+import "../styles/responsive.css";
 import entries from "../data/entries.json";
 
 import Header from "../components/Header";
@@ -128,9 +129,8 @@ export default function Page() {
                   <button
                     key={pageNumber}
                     onClick={() => setCurrentPage(pageNumber)}
-                    className={`page-number ${
-                      currentPage === pageNumber ? "active" : ""
-                    }`}
+                    className={`page-number ${currentPage === pageNumber ? "active" : ""
+                      }`}
                   >
                     {pageNumber}
                   </button>

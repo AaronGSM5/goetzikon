@@ -336,26 +336,6 @@ body {
   text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .content-grid {
-    flex-direction: column;
-  }
-
-  .left-section,
-  .right-section {
-    flex: 1 1 100%;
-  }
-
-  .word-of-day-card {
-    position: static;
-  }
-
-  .alphabet-timeline {
-    display: none;
-  }
-}
-
 /*
 // Pagination Styles
  */
@@ -398,4 +378,3 @@ body {
 .page-number.active:hover {
   background-color: #007bff;
 }
-
