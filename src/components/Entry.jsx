@@ -12,23 +12,23 @@ function EntriesList({ entry }) {
         {!isOpen && <div className="entry-card-closed">
           <div className="entry-header">
             <h3 className="entry-phrase">{entry.phrase} {entry.numerus} {entry.genus}</h3>
-            <p className="entry-translation">{entry.translation.join(", ")}</p>
+            {entry.translation && <p className="entry-translation">{entry.translation.join(", ")}</p>}
           </div>
-          <button className="entry-toggle-button"><HiChevronLeft style={{ fontSize: "large" }} /></button>
+          {(entry.description || entry.example) && <button className="entry-toggle-button"><HiChevronLeft style={{ fontSize: "large" }} /></button>}
         </div>}
 
         {isOpen && <div className="entry-card-open" onClick={() => setIsOpen(!isOpen)}>
           <div className="entry-header">
             <h3 className="entry-phrase">{entry.phrase} {entry.numerus} {entry.genus}</h3>
-            <p className="entry-translation">{entry.translation.join(", ")}</p>
+            {entry.translation && <p className="entry-translation">{entry.translation.join(", ")}</p>}
           </div>
-          <p className="entry-description">{entry.description}</p>
-          <div className="entry-example-section">
+          {entry.description && <p className="entry-description">{entry.description}</p>}
+          {entry.example && <div className="entry-example-section">
             <p className="entry-example">
               <span className="example-label">Beispiel:</span> {entry.example}
             </p>
-          </div>
-          <button className="entry-toggle-button"><HiChevronDown style={{ fontSize: "large" }} /></button>
+          </div>}
+          {(entry.description || entry.example) && <button className="entry-toggle-button"><HiChevronDown style={{ fontSize: "large" }} /></button>}
         </div>}
 
       </div>
