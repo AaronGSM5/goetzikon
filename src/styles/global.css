@@ -1,0 +1,20 @@
+body {
+  --custom-text-color: #000333;
+  --custom-background-color: #ffffff;
+  --custom-border-color: #D5DDE1;
+  --custom-primary-color: #3fa5e9;
+  --custom-secundary-color: #60cbe6;
+  --custom-accent-color: #c7f5ff;
+}
+
+.primary {
+  background-color: var(--custom-primary-color);
+}
+
+.secundary {
+  background-color: var(--custom-secundary-color);
+}
+
+.accent {
+  background-color: var(--custom-accent-color);
+}
