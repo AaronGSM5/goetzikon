@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/lexicon.css";
 import "../styles/header.css";
 import "../styles/responsive.css";
+import "../styles/global.css";
 import entries from "../data/entries.json";
 
 import Header from "../components/Header";
@@ -91,7 +92,7 @@ export default function Page() {
             </div>
             <div className="search-container">
               <svg
-                className="search-icon"
+                className="search-icon text"
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
@@ -100,15 +101,15 @@ export default function Page() {
                 strokeWidth="2"
               >
                 {" "}
-                <circle cx="11" cy="11" r="8"></circle>{" "}
-                <path d="m21 21-4.35-4.35"></path>{" "}
+                <circle cx="11" cy="11" r="8" className="text"></circle>{" "}
+                <path d="m21 21-4.35-4.35" className="text"></path>{" "}
               </svg>
               <input
                 type="text"
-                placeholder="Suche nach Begriffen..."
+                placeholder="Suche nach Sprüchen..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="search-input"
+                className="search-input text"
               />
             </div>
 
@@ -117,7 +118,7 @@ export default function Page() {
               {currentEntries.length > 0 ? (
                 currentEntries.map((entry) => <Entry entry={entry} />)
               ) : (
-                <div className="no-results">
+                <div className="no-results text">
                   <p>Keine Einträge gefunden.</p>
                 </div>
               )}
@@ -130,7 +131,7 @@ export default function Page() {
                     key={pageNumber}
                     onClick={() => setCurrentPage(pageNumber)}
                     className={`page-number ${currentPage === pageNumber ? "active" : ""
-                      }`}
+                      } text`}
                   >
                     {pageNumber}
                   </button>
@@ -148,7 +149,7 @@ export default function Page() {
       {/* Footer */}
       <footer className="lexicon-footer">
         <div className="footer-content">
-          <p className="copyright">&copy; 2025 Götzikon</p>
+          <p className="copyright text">&copy; 2025 Götzikon</p>
         </div>
       </footer>
     </div>

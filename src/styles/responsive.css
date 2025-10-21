@@ -41,7 +41,7 @@
     /* Verhindert, dass die Rückseite des Elements beim Drehen sichtbar ist */
     backface-visibility: hidden;
     /* Beispiel-Hintergrundfarbe */
-    color: white;
+    color: var(--custom-text-color);
   }
 
   /* Der Container für das SVG (Rückseite) */
@@ -49,8 +49,8 @@
     /* Dreht das SVG standardmäßig um 180 Grad, sodass es nicht sichtbar ist */
     transform: rotateX(180deg);
     /* Beispiel-Hintergrundfarbe */
-    background-color: #218838;
-    border-radius: 10px;
+    background-color: var(--custom-primary-color);
+    border-radius: 8px;
   }
 
   /* Flip-Effekt beim Hovern */
