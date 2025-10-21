@@ -14,7 +14,7 @@ function EntriesList({ entry }) {
             <h3 className="entry-phrase">{entry.phrase} {entry.numerus} {entry.genus}</h3>
             {entry.translation && <p className="entry-translation">{entry.translation.join(", ")}</p>}
           </div>
-          {(entry.description || entry.example) && <button className="entry-toggle-button"><HiChevronLeft style={{ fontSize: "large" }} /></button>}
+          {(entry.description || entry.example) && <button className="entry-toggle-button"><HiChevronLeft style={{ fontSize: "large", color: "black" }} /></button>}
         </div>}
 
         {isOpen && <div className="entry-card-open" onClick={() => setIsOpen(!isOpen)}>
@@ -28,7 +28,7 @@ function EntriesList({ entry }) {
               <span className="example-label">Beispiel:</span> {entry.example}
             </p>
           </div>}
-          {(entry.description || entry.example) && <button className="entry-toggle-button"><HiChevronDown style={{ fontSize: "large" }} /></button>}
+          {(entry.description || entry.example) && <button className="entry-toggle-button"><HiChevronDown style={{ fontSize: "large", color: "black" }} /></button>}
         </div>}
 
       </div>
