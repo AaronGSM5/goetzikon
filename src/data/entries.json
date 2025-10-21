@@ -17,10 +17,6 @@
     "translation": [
       "der Gesprächspartner"
     ],
-    "description": "Herr Götz verwendet diese Anrede um den Gegenüber anzusprechen. Dabei zeugt dieser Ausdruck von großer Werschätzung und lässt auf ein vertrautes Verhältniss schließen",
-    "translation": [
-      "der Gesprächspartner"
-    ],
     "description": "Herr Götz verwendet diese Anrede um den Gegenüber anzusprechen. Dabei zeugt dieser Ausdruck von großer Werschätzung und lässt auf ein vertrautes Verhältniss schließen.",
     "example": "Ohne den Zapfen zu schicken.",
     "numerus": "Sg.",
@@ -55,10 +51,6 @@
     "translation": [
       "genauer"
     ],
-    "description": "",
-    "translation": [
-      "genauer"
-    ],
     "description": "Mit Kraft beschreibt den hohen Energieaufwand, welcher bei der beschriebenen Tätigkeit eingesetzt wird. Diese extreme Anstrengung spiegelt sich letzten Endes in der Präzision und sorgfälltigen Ausführung wieder.",
     "example": "Da muss man später nochmal mit Kraft nachschauen",
     "numerus": null,
@@ -79,10 +71,6 @@
     "id": 7,
     "phrase": "Den Meister als Andockstation nutzen",
     "translation": [
-      ""
-    ],
-    "description": "",
-    "translation": [
       "Sich eine zweite Meinung einholen"
     ],
     "description": "Damit ist gemeint, dass man es, bei unsicherheiten vorzieht sich bei einer weiteren und möglicherweise auch kompetenteren Person bezüglich eines Themas informiert.",
@@ -93,9 +81,6 @@
   {
     "id": 8,
     "phrase": "Grund zum ausatmen",
-    "translation": [
-      ""
-    ],
     "translation": [
       "Erleichtert sein"
     ],
@@ -108,9 +93,6 @@
     "id": 9,
     "phrase": "Da bleib ich bei der Werkstattadresse",
     "translation": [
-      ""
-    ],
-    "translation": [
       "Ich bleibe bei meinem Standpunkt"
     ],
     "description": "",
@@ -120,10 +102,6 @@
   },
   {
     "id": 10,
-    "phrase": "Den Jugendlichen Siezen",
-    "translation": [
-      ""
-    ],
     "phrase": "jemanden Siezen",
     "translation": [
       "Ein Distanziertes Verhältnis zu jemanden haben"
@@ -137,9 +115,6 @@
     "id": 11,
     "phrase": "Die Töne Ordnen",
     "translation": [
-      ""
-    ],
-    "translation": [
       "sich aufregen"
     ],
     "description": "",
@@ -151,12 +126,6 @@
     "id": 12,
     "phrase": "Von innen arbeiten",
     "translation": [
-      ""
-    ],
-    "description": "",
-    "example": "",
-    "numerus": "",
-    "genus": """translation": [
       "Nachdenken"
     ],
     "description": "Der Spruch 'Ich muss kurz von innen arbeiten' hat sich ohne Frage den Platz in der Reihe der ikonischsten Sprüche in der götzischen Sprache gesichert. Bei starkerem Nachdenken oder gar grübeln ist eine Wiederholung des Spruches möglich.",
