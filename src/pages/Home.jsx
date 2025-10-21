@@ -3,12 +3,14 @@ import "../styles/lexicon.css";
 import "../styles/header.css";
 import "../styles/responsive.css";
 import "../styles/global.css";
+import "../styles/random-phrase.css";
 import entries from "../data/entries.json";
 
 import Header from "../components/Header";
 import Entry from "../components/Entry";
 import AlphabetSelect from "../components/AlphabetSelect";
 import WordOfTheDay from "../components/WordOfTheDay";
+import RandomPhrase from "../components/RandomPhrase";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -16,7 +18,7 @@ export default function Page() {
   const [selectedLetter, setSelectedLetter] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const entriesPerPage = 3;
+  const entriesPerPage = 5;
 
   const filteredEntries = entries.filter((entry) => {
     const normalizedQuery = searchQuery.toLowerCase();
@@ -145,6 +147,7 @@ export default function Page() {
 
           <div className="right-section">
             <WordOfTheDay />
+            <RandomPhrase />
           </div>
         </div>
       </main>

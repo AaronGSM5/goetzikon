@@ -1,6 +1,5 @@
 /* Desktops */
 @media (min-width: 1025px) {
-
   /* Der Haupt-Button-Container */
   .donation-button {
     /* Stellt sicher, dass der 3D-Effekt sichtbar ist */
@@ -14,19 +13,15 @@
     padding: 0px;
   }
 
-  /* Der Wrapper, der die eigentliche Drehung ausführt */
   .flip-content-wrapper {
     position: relative;
     width: 180px;
     height: 55px;
     text-align: center;
-    /* Dauer und Art des Übergangs für die Drehung */
     transition: transform 0.3s;
-    /* Stellt sicher, dass Kindelemente ihre 3D-Eigenschaften beibehalten */
     transform-style: preserve-3d;
   }
 
-  /* Der Container für den Text (Vorderseite) */
   .button-text,
   .button-svg {
     position: absolute;
@@ -38,17 +33,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Verhindert, dass die Rückseite des Elements beim Drehen sichtbar ist */
     backface-visibility: hidden;
-    /* Beispiel-Hintergrundfarbe */
     color: var(--custom-text-color);
   }
 
-  /* Der Container für das SVG (Rückseite) */
   .button-svg {
-    /* Dreht das SVG standardmäßig um 180 Grad, sodass es nicht sichtbar ist */
     transform: rotateX(180deg);
-    /* Beispiel-Hintergrundfarbe */
     background-color: var(--custom-primary-color);
     border-radius: 8px;
   }
@@ -118,5 +108,5 @@
     width: 50px;
     height: 50px;
   }
-
 }
+

@@ -1,0 +1,30 @@
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--custom-border-color);
+}
+
+/* Style for the icon button */
+.random-icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%; /* Makes the hover effect circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666; /* A neutral icon color */
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.random-icon-button:hover {
+  background-color: #f0f0f0; /* A light background on hover */
+  color: #000; /* Darkens the icon on hover */
+}
+
