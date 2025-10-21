@@ -116,7 +116,9 @@ export default function Page() {
             {/* Entries List */}
             <div className="entries-list">
               {currentEntries.length > 0 ? (
-                currentEntries.map((entry) => <Entry entry={entry} />)
+                currentEntries.map((entry) => (
+                  <Entry key={entry.id} entry={entry} />
+                ))
               ) : (
                 <div className="no-results text">
                   <p>Keine Einträge gefunden.</p>
@@ -130,8 +132,9 @@ export default function Page() {
                   <button
                     key={pageNumber}
                     onClick={() => setCurrentPage(pageNumber)}
-                    className={`page-number ${currentPage === pageNumber ? "active" : ""
-                      } text`}
+                    className={`page-number ${
+                      currentPage === pageNumber ? "active" : ""
+                    } text`}
                   >
                     {pageNumber}
                   </button>
