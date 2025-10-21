@@ -18,6 +18,10 @@
       "der Gesprächspartner"
     ],
     "description": "Herr Götz verwendet diese Anrede um den Gegenüber anzusprechen. Dabei zeugt dieser Ausdruck von großer Werschätzung und lässt auf ein vertrautes Verhältniss schließen",
+    "translation": [
+      "der Gesprächspartner"
+    ],
+    "description": "Herr Götz verwendet diese Anrede um den Gegenüber anzusprechen. Dabei zeugt dieser Ausdruck von großer Werschätzung und lässt auf ein vertrautes Verhältniss schließen.",
     "example": "Ohne den Zapfen zu schicken.",
     "numerus": "Sg.",
     "genus": "m."
@@ -38,7 +42,7 @@
     "phrase": "Froh eintauchen",
     "translation": [
       "Duschen gehen",
-      "sich Baden"
+      "sich waschen"
     ],
     "description": "",
     "example": "",
@@ -52,6 +56,10 @@
       "genauer"
     ],
     "description": "",
+    "translation": [
+      "genauer"
+    ],
+    "description": "Mit Kraft beschreibt den hohen Energieaufwand, welcher bei der beschriebenen Tätigkeit eingesetzt wird. Diese extreme Anstrengung spiegelt sich letzten Endes in der Präzision und sorgfälltigen Ausführung wieder.",
     "example": "Da muss man später nochmal mit Kraft nachschauen",
     "numerus": null,
     "genus": null
@@ -74,9 +82,13 @@
       ""
     ],
     "description": "",
+    "translation": [
+      "Sich eine zweite Meinung einholen"
+    ],
+    "description": "Damit ist gemeint, dass man es, bei unsicherheiten vorzieht sich bei einer weiteren und möglicherweise auch kompetenteren Person bezüglich eines Themas informiert.",
     "example": "",
-    "numerus": "",
-    "genus": ""
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 8,
@@ -84,10 +96,13 @@
     "translation": [
       ""
     ],
+    "translation": [
+      "Erleichtert sein"
+    ],
     "description": "",
     "example": "",
-    "numerus": "",
-    "genus": ""
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 9,
@@ -95,10 +110,13 @@
     "translation": [
       ""
     ],
+    "translation": [
+      "Ich bleibe bei meinem Standpunkt"
+    ],
     "description": "",
     "example": "",
-    "numerus": "",
-    "genus": ""
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 10,
@@ -106,10 +124,14 @@
     "translation": [
       ""
     ],
+    "phrase": "jemanden Siezen",
+    "translation": [
+      "Ein Distanziertes Verhältnis zu jemanden haben"
+    ],
     "description": "",
-    "example": "",
-    "numerus": "",
-    "genus": ""
+    "example": "Da möchte ich den Jugendlichen auch nicht Siezen",
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 11,
@@ -117,10 +139,13 @@
     "translation": [
       ""
     ],
+    "translation": [
+      "sich aufregen"
+    ],
     "description": "",
-    "example": "",
-    "numerus": "",
-    "genus": ""
+    "example": "Ich bin grade die Töne am Ordnen",
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 12,
@@ -131,7 +156,13 @@
     "description": "",
     "example": "",
     "numerus": "",
-    "genus": ""
+    "genus": """translation": [
+      "Nachdenken"
+    ],
+    "description": "Der Spruch 'Ich muss kurz von innen arbeiten' hat sich ohne Frage den Platz in der Reihe der ikonischsten Sprüche in der götzischen Sprache gesichert. Bei starkerem Nachdenken oder gar grübeln ist eine Wiederholung des Spruches möglich.",
+    "example": "Ich muss kurz von innen arbeiten (ggf. Ich muss kurz von innen arbeiten)",
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 13,
@@ -141,8 +172,8 @@
     ],
     "description": "",
     "example": "",
-    "numerus": "",
-    "genus": ""
+    "numerus": null,
+    "genus": null
   },
   {
     "id": 14,
@@ -152,7 +183,7 @@
     ],
     "description": "",
     "example": "",
-    "numerus": "",
-    "genus": ""
+    "numerus": null,
+    "genus": null
   }
 ]
